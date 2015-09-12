@@ -28,9 +28,9 @@ $(document).ready(function ()
 	if (window.DeviceOrientationEvent) 
 	{
     	window.addEventListener("deviceorientation", function () {
-        tilt({alpha: event.alpha, beta: event.beta, gamma: event.gamma}, conn);
-    }, true);
-}
+        	tilt({alpha: event.alpha, beta: event.beta, gamma: event.gamma}, conn);
+    	}, true);
+	}
 	
 	// Process incoming game messages
 	$(document).on("game_message", function (e, message) 
