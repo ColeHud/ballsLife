@@ -3,7 +3,7 @@
     /* Preload images */
     body:before {
         display: none;
-        content: url('/img/peggle_background.jpg')
+        content: url('http://www.abpathfinder.com/wp-content/uploads/2013/02/balls1.jpg')
     }
     
     html, body {
@@ -14,17 +14,17 @@
     body {
         overflow-y: hidden ! important;
         overflow-x: hidden ! important;
-        background-image: url('/img/sample_background.jpg');
+        background-image: url('http://www.abpathfinder.com/wp-content/uploads/2013/02/balls1.jpg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
     
     :-webkit-full-screen {
-		background: url('/img/sample_background.jpg');
+		background: url('http://www.abpathfinder.com/wp-content/uploads/2013/02/balls1.jpg');
 		background-size: 100% 100%;
 	}
 	:-moz-full-screen {
-		background: url('/img/sample_background.jpg');
+		background: url('http://www.abpathfinder.com/wp-content/uploads/2013/02/balls1.jpg');
 		background-size: 100% 100%;
 	}
 

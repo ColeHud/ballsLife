@@ -3,7 +3,7 @@
     /* Preload images */
     body:before {
         display: none;
-        content: url('/img/sample_background.jpg')
+        content: url('/img/featured-space-policy.jpg')
     }
     
     html, body {
@@ -14,17 +14,17 @@
     body {
         overflow-y: hidden ! important;
         overflow-x: hidden ! important;
-        background-image: url('/img/sample_background.jpg');
+        background-image: url('/img/featured-space-policy.jpg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
     
     :-webkit-full-screen {
-		background: url('/img/sample_background.jpg');
+		background: url('/img/featured-space-policy.jpg');
 		background-size: 100% 100%;
 	}
 	:-moz-full-screen {
-		background: url('/img/sample_background.jpg');
+		background: url('/img/featured-space-policy.jpg');
 		background-size: 100% 100%;
 	}
 
