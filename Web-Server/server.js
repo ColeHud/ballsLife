@@ -1,5 +1,5 @@
 /*
-Cole Hudson
+Cole
 */
 
 require('log-timestamp');
