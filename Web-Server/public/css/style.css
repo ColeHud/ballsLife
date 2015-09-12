@@ -1,0 +1,79 @@
+@media only screen and (orientation: landscape) { 
+
+    /* Preload images */
+    body:before {
+        display: none;
+        content: url('/img/peggle_background.jpg')
+    }
+    
+    html, body {
+        width: 100%;
+        height: 100%;
+    } 
+    
+    body {
+        overflow-y: hidden ! important;
+        overflow-x: hidden ! important;
+        background-image: url('/img/sample_background.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    :-webkit-full-screen {
+		background: url('/img/sample_background.jpg');
+		background-size: 100% 100%;
+	}
+	:-moz-full-screen {
+		background: url('/img/sample_background.jpg');
+		background-size: 100% 100%;
+	}
+
+
+    #pause {
+        position: absolute;
+        right: 0;
+        top: 5%;
+        width: 12%;
+    }
+	
+	#touchbox {
+        height: 66%;
+        width: 80%;
+		left: 50%;
+		top: 70%;
+		margin-left: -40%;
+		margin-top: -33%;
+        background: #000000; /*the colour of the button*/
+        /*style the text*/
+        font-size:1.0em;
+        text-align: center;
+        vertical-align: middle;
+        color: #fff;
+        border-radius: 10px;
+		position: absolute;
+    }
+
+    #powerup {
+        height: 20%;
+        width: 20%;
+        background: #000000; /*the colour of the button*/
+        /*style the text*/
+        font-size:2.0em;
+        text-align: center;
+        vertical-align: middle;
+        color: #fff;
+        border-radius: 10px;
+		position: absolute;
+    }
+	
+	#player {
+		width: 12vw;
+		height: 12vw;
+		display:block;
+		position:relative;
+		top: 50%;
+		left: 50%;
+		margin-left: -6vw;
+		margin-top: -6vw;
+	}
+}
