@@ -6,19 +6,39 @@ Available at:  www.eapathfinders.com/license
 All other use is strictly prohibited. 
 */
 
-$(document).ready(function () {
+var tilt = function(events, connection)
+{
+	connection.sendMessage(events);
+}
 
+$(document).ready(function () 
+{
 	console.log("Document Loaded");
+	$("#circle").click(function(){
+		console.log("Boost");
+	});
 
 	// INIT..
 	conn = new Connection();
 	conn.sendMessage({"type": "connect"});
+
+	var m_circle = new BoostButton($("#circle"));
+
+	//send gyro data
+	if (window.DeviceOrientationEvent) 
+	{
+    	window.addEventListener("deviceorientation", function () {
+        tilt({alpha: event.alpha, beta: event.beta, gamma: event.gamma}, conn);
+    }, true);
+}
 	
 	// Process incoming game messages
-	$(document).on("game_message", function (e, message) {
+	$(document).on("game_message", function (e, message) 
+	{
 		console.log("Received Message: " + JSON.stringify(message));
 		var payload = message.payload;
-		switch (payload.type) {
+		switch (payload.type) 
+		{
 			//your code here
 		}
 	});

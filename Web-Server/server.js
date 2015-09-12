@@ -61,6 +61,10 @@ io.on('connection', function(socket) {
 		console.log("[Unity] Unity connected. Socket " + socket.id);
 	});
 
+	socket.on("gyro", function(data){
+		console.log(data.alpha + ", " + data.beta + ", " + data.gamma);
+	});
+
 	// Save a reference to each controller so we can send messages to just specific ones.
 	socket.on("controller", function(msg) {
 		var index = msg.toString();
@@ -98,7 +102,8 @@ io.on('connection', function(socket) {
 	})
 
 	// Send game messages from the controllers to Unity and vice versa.
-	socket.on('game_message', function(msg) {		
+	socket.on('game_message', function(msg) {	
+		console.log(msg);	
 		if ("unity" in clients) {
 			// If the message is from Unity, send it to the controllers.	
 			if (socket.id === clients["unity"].id) {

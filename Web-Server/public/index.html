@@ -22,10 +22,21 @@
     height: 50%;
     margin: 0 auto;
 }
+
+#boostText
+{
+	position: relative;
+	text-align: center;
+	height: 10%;
+	top:35%;
+	font-family: helvetica;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 </style>
+
 <body>
 	<div>
-		<div id="circle"></div>
+		<div id="circle"><h1 id="boostText">BOOST</h1></div>
 	</div>
 	
 	<!-- Required javascript libraries. Add your own libraries here. -->
@@ -35,5 +46,8 @@
 
 	<!-- Load your controller's javascript here. -->
 	<script src="/js/controllerManager.js"></script>
+	<script src="/js/gyroscope.js"></script>
+
+	</style>
 </body>
 </html>
