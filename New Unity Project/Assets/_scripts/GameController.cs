@@ -4,23 +4,23 @@ using Utility;
 using BladeCast;
 
 public class GameController : MonoBehaviour {
-	public GameObject playerObj;
-	private List<GameObject> players = new List<GameObject> ();
+	public GameObject[] playerDB;
+	public Dictionary<int, GameObject> players;
 
 	// Use this for initialization
 	void Start () {
-		BCMessenger.Instance.RegisterListener ("connect", 0, this.gameObject, "HandleConnection");
-		//BCMessenger.Instance.RegisterListener ("disconnect", 0, this.gameObject, "");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		BCMessenger.Instance.RegisterListener ("connect", 0, this.gameObject, "HandleConnect");
+		BCMessenger.Instance.RegisterListener ("disconnect", 0, this.gameObject, "HandleDisconnect");
 	}
 
 	private void HandleConnection(ControllerMessage msg) {
-		// index of new hand
-		int controllerIndex = msg.ControllerSource;     
-		
+		int controllerIndex = msg.ControllerSource; 
+		players.Add(controllerIndex, (GameObject)Instantiate(playerDB[controllerIndex], new Vector3(0f, 5f, 0f), Quaternion.identity)); 
+	}
+
+	private void HandleDisconnect(ControllerMessage msg) {
+		int controllerIndex = msg.ControllerSource;
+		Destroy (players [controllerIndex]);
+		players.Remove (controllerIndex);
 	}
 }

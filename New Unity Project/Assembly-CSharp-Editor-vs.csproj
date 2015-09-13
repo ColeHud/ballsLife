@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\_scripts\_comms\JSONObject\Editor\JSONChecker.cs" />
      <None Include="Assets\_scripts\_comms\JSONObject\readme.txt" />
-     <None Include="Assets\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

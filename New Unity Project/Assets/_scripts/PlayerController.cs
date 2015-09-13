@@ -22,10 +22,15 @@ public class PlayerController : MonoBehaviour {
 	private int boostCounter;
 	private bool boosting;
 	private Vector3 originSize;
+	private int controller;
+
+	public void Init (int cid) {
+		controller = cid;
+	}
 
 	void Start () {
-		BCMessenger.Instance.RegisterListener ("boost", 0, this.gameObject, "StartBoost");
-		BCMessenger.Instance.RegisterListener ("gyro" ,0, this.gameObject, "MovePlayer");
+		BCMessenger.Instance.RegisterListener ("boost", controller, this.gameObject, "StartBoost");
+		BCMessenger.Instance.RegisterListener ("gyro" , controller, this.gameObject, "MovePlayer");
 		//BCMessenger.Instance.RegisterListener ("
 		rb = GetComponent<Rigidbody>();	
 		boostCounter = 0;
@@ -59,13 +64,14 @@ public class PlayerController : MonoBehaviour {
 			source.PlayOneShot(death, 0.5f);
 			lives--;
 			if(lives >= 0){
-				rb.position = new Vector3(0.0f, 8f, 0.0f);
+				rb.position = new Vector3(0.0f, 5f, 0.0f);
+			} else {
+
 			}
 		}
 	}
 
 	void OnCollisionEnter (Collision other) {
-		Debug.Log ("ColEnter");
 		if (other.gameObject.CompareTag ("Player")) {
 			GameObject temp = (GameObject)Instantiate(spark, this.transform.position, Quaternion.identity); 
 			source.PlayOneShot(bump, 0.1f);
