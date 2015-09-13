@@ -28,7 +28,7 @@ $(document).ready(function ()
 	if (window.DeviceOrientationEvent) 
 	{
     	window.addEventListener("deviceorientation", function () {
-        	tilt({alpha: event.alpha, beta: event.beta, gamma: event.gamma}, conn);
+        	tilt({"type":"gyro", "alpha": event.alpha, "beta": event.beta, "gamma": event.gamma}, conn);
     	}, true);
 	}
 	
