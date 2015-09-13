@@ -91,7 +91,12 @@ io.on('connection', function(socket) {
 			for (var index in clients) {
 				if (clients[index] !== null && clients[index].id === socket.id) {
 					clients[index] = null;
-					console.log("[Controller] Controller " + index + " has disconnected.");					
+					console.log("[Controller] Controller " + index + " has disconnected.");
+
+					if(clients["unity"])
+					{
+						clients["unity"].emit("game_message", {"type":"disconnect"});	
+					}		
 				}
 			}
 		}

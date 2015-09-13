@@ -28,7 +28,7 @@ $(document).ready(function ()
     	}, true);
 	}
 
-	$("#circle").click(function(){
+	$("#circle").on("tap", function(){
 		console.log("Boost");
 		conn.sendMessage({"type": "boost"});
 	});
