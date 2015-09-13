@@ -2,7 +2,7 @@ function Connection (onGameMessage) {
 
     var getIndex = function() {
         var href = window.location.href;
-        var index = href.substr(href.lastIndexOf('/') + 1);
+        var index = href.substr(href.lastIndexOf('/') + 1)
 
         if (!isNaN(index) && parseInt(Number(index)) == index && !isNaN(parseInt(index,10))) {
             return parseInt(index);

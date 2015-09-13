@@ -14,11 +14,15 @@ var tilt = function(events, connection)
 $(document).ready(function () 
 {
 	console.log("Document Loaded");
+	$("#circle").click(function(){
+		console.log("Boost");
+	});
 
 	// INIT..
 	conn = new Connection();
 	conn.sendMessage({"type": "connect"});
-	conn.sendMessage({"type": "boost"});
+
+	var m_circle = new BoostButton($("#circle"));
 
 	//send gyro data
 	if (window.DeviceOrientationEvent) 
@@ -27,13 +31,6 @@ $(document).ready(function ()
         	tilt({"type":"gyro", "alpha": event.alpha, "beta": event.beta, "gamma": event.gamma}, conn);
     	}, true);
 	}
-
-	$("#circle").click(function(){
-		console.log("Boost");
-		conn.sendMessage({"type": "boost"});
-	});
-
-	var m_circle = new BoostButton($("#circle"));
 	
 	// Process incoming game messages
 	$(document).on("game_message", function (e, message) 

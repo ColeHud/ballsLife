@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void StartBoost () {
-		rb.AddExplosionForce (boostSpeed,rb.position - rb.velocity, 0.0f, .25f, ForceMode.Impulse);
+		rb.AddExplosionForce (boostSpeed,rb.position - rb.velocity, 0.0f, 1f, ForceMode.Impulse);
 		GameObject temp = (GameObject)Instantiate (boostCloud, this.transform.position, Quaternion.identity);
 		//this.transform.localScale = 2f * this.transform.localScale;
 		source.PlayOneShot (boostSound, 0.5f);
@@ -97,12 +97,12 @@ public class PlayerController : MonoBehaviour {
 		float x = 0;
 		float z = 0;
 		if (msg.Payload.HasField ("beta")) {
-			x = System.Convert.ToSingle(msg.Payload.GetField("beta").ToString());
+			z = System.Convert.ToSingle(msg.Payload.GetField("beta").ToString());
 		} else {
 			print ("Vertical tilt not detected");
 		}
 		if (msg.Payload.HasField ("gamma")) {
-			z = System.Convert.ToSingle(msg.Payload.GetField("gamma").ToString());
+			x = System.Convert.ToSingle(msg.Payload.GetField("gamma").ToString());
 		} else {
 			print ("Horizontal tilt not detected");
 		}
